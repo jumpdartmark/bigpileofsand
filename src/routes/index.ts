@@ -1,6 +1,7 @@
 import {
   UploadOutlined,
   VideoCameraOutlined,
+  FileSearchOutlined,
 } from '@ant-design/icons';
 import { RouteMap } from '../types';
 import AboutScreen from '../components/AboutScreen';
@@ -15,7 +16,7 @@ export const defaultRoute: RouteMap = {
   route: '/',
   title: 'home',
   description: 'home',
-  icon: VideoCameraOutlined,
+  icon: UploadOutlined,
 };
 
 // eslint-disable-next-line import/prefer-default-export
@@ -33,6 +34,6 @@ export const routes: RouteMap[] = [
     route: '/books',
     title: 'books',
     description: 'books',
-    icon: UploadOutlined,
+    icon: FileSearchOutlined,
   },
 ];

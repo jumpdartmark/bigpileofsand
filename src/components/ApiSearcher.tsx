@@ -56,6 +56,7 @@ const ApiSearcher: React.FC = () => {
                 {
                   results?.map((book) => (
                     <BookListItem
+                      key={book.id}
                       book={book}
                       isSelected={selectedBook?.id === book.id}
                       onSelectBook={setSelectedBook}

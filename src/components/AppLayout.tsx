@@ -25,7 +25,6 @@ const AppLayout: React.FC = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  console.warn(routes.map((r) => r.route));
   return (
     <Layout>
       <Sider className={styles.sider} collapsible collapsed={isCollapsed} onCollapse={onCollapse}>
