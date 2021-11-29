@@ -4,6 +4,7 @@ import {
 } from '@ant-design/icons';
 import { RouteMap } from '../types';
 import AboutScreen from '../components/AboutScreen';
+import BookScreen from '../components/BookScreen';
 
 // todo remove me once routes working
 // eslint-disable-next-line import/no-cycle
@@ -28,10 +29,10 @@ export const routes: RouteMap[] = [
     icon: VideoCameraOutlined,
   },
   {
-    element: AboutScreen,
-    route: '/other',
-    title: 'other',
-    description: 'other',
+    element: BookScreen,
+    route: '/books',
+    title: 'books',
+    description: 'books',
     icon: UploadOutlined,
   },
 ];

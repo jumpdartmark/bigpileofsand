@@ -1,0 +1,19 @@
+.full{
+  display: flex;
+  flex-flow: row nowrap;
+  .list{
+    flex: 0 1 30%;
+  }
+  .selected{
+    flex: 0 1 90%;
+  }
+}
+
+.settings{
+  display: flex;
+  flex-flow: row nowrap;
+  &>div:not(:first-child){
+    padding-left: 10px;
+  }
+  padding-bottom: 10px;
+}

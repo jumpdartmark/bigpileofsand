@@ -12,6 +12,8 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
-        "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }]
+        "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }],
+        "linebreak-style": 0,
+        "react/require-default-props": 0
     }
 };

@@ -5,8 +5,13 @@ export type Book = {
   id : string,
   title : string,
   year : string,
-  author : string,
+  author : string | string[],
   wiki_url : string,
+};
+
+export type Quote = {
+  id : string,
+  quote : string,
 };
 
 export type RouteMap = {
