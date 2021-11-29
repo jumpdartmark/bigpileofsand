@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   useLocation,
+  useNavigate,
 } from 'react-router-dom';
 
 import styles from './AppLayout.module.scss';
@@ -11,24 +12,25 @@ import styles from './AppLayout.module.scss';
 import { routes, defaultRoute } from '../routes';
 
 const {
-  Header, Content, Footer, Sider,
+  Content, Sider,
 } = Layout;
 
 const AppLayout: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const location = useLocation();
-  // eslint-disable-next-line no-console
-  console.warn(location);
+  const navigate = useNavigate();
 
   const onCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  console.warn(routes.map((r) => r.route));
   return (
     <Layout>
       <Sider className={styles.sider} collapsible collapsed={isCollapsed} onCollapse={onCollapse}>
         <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[location.key]}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[location.key]} onClick={(mi) => { navigate(mi.key); }}>
           {
             routes.map((rt) => {
               const ThisIcon = rt.icon;
@@ -38,7 +40,6 @@ const AppLayout: React.FC = () => {
         </Menu>
       </Sider>
       <Layout className="site-layout" style={{ marginLeft: 200 }}>
-        <Header className="site-layout-background" style={{ padding: 0 }} />
         <Content className={styles.content}>
           <Routes>
             {
@@ -46,11 +47,9 @@ const AppLayout: React.FC = () => {
                 <Route key={rt.route} path={rt.route} element={rt.element({})} />
               ))
             }
-            <Route key="/" path="/" element={defaultRoute.element({})} />
             <Route key="*" path="*" element={defaultRoute.element({})} />
           </Routes>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>
     </Layout>
   );

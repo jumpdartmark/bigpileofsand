@@ -13,7 +13,14 @@ const BookListItem: React.FC<BookListItemProps> = ({ book, isSelected, onSelectB
   const doSelect = () => {
     if (onSelectBook)onSelectBook(book);
   };
-  return (<SelectableListItem text={displayText} isSelected={!!isSelected} onSelect={doSelect} />);
+  return (
+    <SelectableListItem
+      key={book.id}
+      text={displayText}
+      isSelected={!!isSelected}
+      onSelect={doSelect}
+    />
+  );
 };
 
 export default BookListItem;
